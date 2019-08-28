@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name" : "qr-appstore-url",
+  "version": "1.0",
+	"description": "AppStore PlayStore をブラウザで開いたら、自動的に QR コードを出すよ",
+	"content_scripts": [
+    {
+      "matches": [
+        "https://apps.apple.com/jp/app/*",
+				"https://play.google.com/store/apps/details?id=*"
+      ],
+      "js": [ "jquery.min.js", "qrcode.js", "script.js" ],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ],
+	"permissions": [
+    "tabs",
+    "activeTab"
+	]
+}
